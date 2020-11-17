@@ -8,10 +8,15 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis_test?useSSL=true&amp;useUnicode=true&amp;character=UTF-8"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis_test?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;useUnicode=true&amp;character=UTF-8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="19961218sun;"/>
             </dataSource>
         </environment>
     </environments>
+
+    <!--每一个mapper文件都需要在mybatis核心配置文件中注册-->
+    <mappers>
+        <mapper resource="com/lucas/dao/UserMapper.xml"/>
+    </mappers>
 </configuration>
